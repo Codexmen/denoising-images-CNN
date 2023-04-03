@@ -1,9 +1,17 @@
 ## Motivation
 Create a neural net to denoise images.
-what is a noise image? -- this is an image that contain pixels with random color values.
+
+What is a noise image? -- this is an image that contain pixels with random color values.
 Image can contain synthetic noise like Gaussian or natural due to low light of sceen during shooting.
+Images could be grayscale or colored. 
+
+This network trained to denoise color images with natural noise (like digital photos from smartphones)
 ## Introduction
 
+You could see demo and comparing with Gaussian smoothing in file [compare](https://github.com/Codexmen/denoising-images-CNN/blob/main/compare.ipynb)
+Training process and data preparation in file [SSID](https://github.com/Codexmen/denoising-images-CNN/blob/main/SIDD.ipynb)
+
+Folders `model*` contain a few models that give pretty good results during experimentation. 
 ### Metrics 
 If we have ground true images along with noised images there is a two metrics that we could use 
 for measure performance:
@@ -19,12 +27,15 @@ Used datasets:
  
 For checking results used [RENOIR](http://adrianbarburesearch.blogspot.com/p/renoir-dataset.html)   
 ## Description
-For achieving good results with large images we split then to small chunks 64*64 pixels and use 
+For achieving good results with large images I split them to small chunks `64*64` pixels and use 
 neural network architecture U-net with 4 layers of convolutions double each layer number of filters.
-For training, we generated 50936 parts 64*64 and 12734 patches for validation.
+For training, we generated 50936 parts `64*64` and 12734 patches for validation.
 
 # Demo
+For demonstration, I use RENOIR dataset that was not used during training.
 
+You could see demo and comparing with Gaussian smoothing in file [compare](https://github.com/Codexmen/denoising-images-CNN/blob/main/compare.ipynb)
+Training process and data preparation in file [SSID](https://github.com/Codexmen/denoising-images-CNN/blob/main/SIDD.ipynb)
 # Results
 I compare results of predictions with Gaussian smoothing: 
 #Conclusions
